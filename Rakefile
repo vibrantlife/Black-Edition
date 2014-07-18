@@ -131,4 +131,38 @@ task "console" do
   exec "irb -r./config/environment"
 end
 
-task :default  => :spec
+task "leaves" do
+  puts "                       
+                                                   . ::=..  
+                                                  .::,+.    
+                                               ...~:~..     
+                                               .~:::.       
+                                             .=::=.         
+                                           .:=:~,           
+                                       ....=:~=.            
+                                       ..~+~=..             
+                                      .,=,:,.               
+                                   ..=:.~=.                 
+                                  .,$I.=.                   
+                                ..++,:~..                   
+                               .++=~~..                     
+                            ..=++==:                        
+                          ..,??==+.                         
+                          .~7$++...                         
+                        .~I,.,=..                           
+  7...                ..~I..~..                             
+  ZZZZ$O7..   ..     .~7..~                                 
+  :O O.ZZZZZZ8Z.   .~??.~.                                  
+  .O.Z..O.8.,OZZOOZ$$M=.                                    
+   +, O 8  O 8 :Z OIOOOOOIO,                                
+    O O 7: Z O  O  I  O O8OOOOO?O                           
+         O O  O O  O  O  O  O  O8888887$+                   
+              O ,  8  O  I  I  Z  8 =8888O                  
+                   ?: 8  Z  Z  Z  D  8  ZZ                  
+                         8  8  8  8  8  I$                  
+                            8  8  8  8  ,$                  
+                                  $  :I  8                  
+                                         D                  "
+end
+
+task :default  => :leaves
