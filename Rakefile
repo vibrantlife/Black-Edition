@@ -162,7 +162,12 @@ task "leaves" do
                          8  8  8  8  8  I$                  
                             8  8  8  8  ,$                  
                                   $  :I  8                  
-                                         D                  "
+                                         D                  
+
+
+  You can update the default rake task by changing the line
+      task default: leaves
+  in the Rakefile."
 end
 
-task :default  => :leaves
+task default: :leaves
