@@ -1,0 +1,23 @@
+
+
+
+
+
+
+<div class="list">
+<% @all_dogs.each do |dog| %>
+<br>
+<p>Name: <%= dog.name%> </p>
+<p>Breed: <%= dog.breed%> </p>
+<p>Age: <%= dog.age%> </p><br>
+<a href="/dogs/<%=dog.id%>">Click here for more information about <%= dog.name %></a>
+<br><br><br>
+
+<% end %>
+
+
+
+
+
+
+</div>
