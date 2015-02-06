@@ -1,31 +1,38 @@
-<form action="/dogs/new/<%=@rate_dog.id %>" method="post">
+<form action="/dogs/<%=@rate_dog.id %>/new" method="post">
 
   <div class="padding"></div>
+
+  <h3>Name:</h3><p> <%= @rate_dog.name%></p><br>
+  <h3>Breed:</h3><p> <%= @rate_dog.breed %></p>
+
+  <br>
   <h2>Rate <%= @rate_dog.name %>!</h2>
-  <br>
-  <br>
+<br><br>
+  <input type="checkbox" name="affectionate"> Affectionate <br><br>
 
-  <input type="text" name="name" value="<%= @rate_dog.name%>">
+  <input type="checkbox" name="independent"> Independent <br><br>
 
-  <input type="text" name="breed" value="<%= @rate_dog.breed %>">
-  <div class="padding"></div>
+  <input type="checkbox" name="playful"> Playful<br><br>
 
-  <input type="checkbox" name="rating" value="affectionate">Affectionate <br><br>
+  <input type="checkbox" name="timid"> Timid<br><br>
 
-  <input type="checkbox" name="rating" value="independent">Independent <br><br>
+  <input type="checkbox" name="good_with_kids"> Good with Kids<br><br>
 
-  <input type="checkbox" name="rating" value="playful">Playful<br><br>
-
-  <input type="checkbox" name="rating" value="timid">Timid<br><br>
-
-  <input type="checkbox" name="rating" value="timid">Timid<br><br>
-
-  <input type="checkbox" name="rating" value="good_with_kids">Good with Kids<br><br>
-
-  <input type="checkbox" name="rating" value="high_energy">High Energy<br><br><br><br>
+  <input type="checkbox" name="high_energy"> High Energy<br><br><br><br>
 
   <button type="submit"> Submit </button>
 
   <div class="padding"></div>
 
 </form>
+
+
+<!--
+
+  For the checkbox, is the name correct? Will it be able to mark an attribute true or false?
+  Pseudocode:
+  - Convert the checked boxes into true values for the attributes
+  - find the dog by the dog_id
+  - create a Rating.new that takes in the volunteer_id and dog_id
+
+  -->

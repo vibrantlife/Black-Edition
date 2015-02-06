@@ -20,4 +20,13 @@
 
 .padding {
   padding: 50px 100px;
+  text-align: left;
+}
+
+* {
+  color: slategrey;
+}
+
+form {
+  padding-left: 100px;
 }
