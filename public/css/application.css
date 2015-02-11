@@ -1,0 +1,107 @@
+/*-----------Layout----------------------------------------*/
+
+.top_title_right{
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 45px;
+
+  position: fixed;
+  top: -15px;
+}
+
+.top_nav_left{
+  position: fixed;
+  right: 8px;
+  top: -16px;
+}
+
+#profile_page_button{
+  position: relative;
+}
+
+#friends_page_button{
+  top: 8px;
+  position: relative;
+}
+
+#Wishlistnew_button{
+  top: 16px;
+  position: relative;
+}
+
+.bottom_nav_center{
+  position: fixed;
+  bottom: 0px;
+  right: 43%;
+}
+
+#help_page_button{
+  bottom: 12px;
+  position: relative;
+}
+#donate_page_button{
+  bottom: 20px;
+  position: relative;
+}
+#contact_info_button{
+  bottom: 12px;
+  position: relative;
+}
+#for_my_mom{
+  font-size: 6px;
+  bottom: 1px;
+  position: absolute;
+  color: navy;
+}
+/*--------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* unvisited link */
+a:link {
+    color: green;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: maroon;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: navy;
+    text-decoration: none;
+}
