@@ -1,8 +1,20 @@
-<h2 align ="center">Welcome <%= User.find(session[:current_user_id]).name %></h2>
 
-<div class="container" align="center">
-  <%id = session[:current_user_id] %>
-  <h4> Here are your snacks: </h4>
-  
+<div class="profile_header">
+  <h2 align ="center">Welcome <%= session_current_user.handle.capitalize%></h2>
+</div>
+
+<div class="profile_picture">
+  <p> img here </p>
+</div>
+
+<div id="profile_name"> <%= session_current_user.name.titleize %>
+</div>
+
+
+<div class="profile_wishes" align="center">
+  <h4> Here are your wishes: </h4>
+    <% Wish.all.each do |wish| %>
+    <p><%= wish.content %></p>
+    <% end %>
 </div>
 

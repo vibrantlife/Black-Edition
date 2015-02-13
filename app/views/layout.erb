@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/application.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/js/application.js"></script>
 
-  <title> For my Mom</title>
+    <title> For my Mom</title>
 
-<h1 class="top_title_right">
-  <a href="/homepage"> Wish List 
-  </a>
-</h1>
-<h5 class="top_nav_left">
-  <a href"/profile" id="profile_page_button"> Profile Page </a>
-  <a href"/friends" id="friends_page_button"> Friends Page </a>
-  <a href"/wishlish/new" id="Wishlistnew_button"> Add a Wish</a>
-</h5>
+  <h1 class="top_title_right">
+    <a href="/homepage"> Wish List 
+    </a>
+  </h1>
+
+  <h5 class="top_nav_left">
+    <a href="/profile" id="profile_page_button"> Profile Page</a>
+    <a href="/friends" id="friends_page_button"> Friends Page </a>
+    <a href="/wishlist/new" id="Wishlistnew_button"> Add a Wish</a>
+  </h5>
 
 </head>
+
+
+
+
+
+
+
+
 <body>
+
+
+
+<div class="logged_in_indicator">
+  <% if session_current_user %>
+  <p id="indicator"> logged in </p>
+    <a href="/logout">Logout</a><br><br>
+      <% else %>
+      <p id="indicator_off"> logged out </p>
+
+      <% end %>
+    </div>
+</div>
+
+
+
+
+
+
   <%= yield %>
 </body>
 
+
+
+
+
+
+
+
+
+
 <h6 class="bottom_nav_center">
-  <a href"/help" id="help_page_button"> Help Page </a>
-  <a href"/donate" id="donate_page_button"> Donate Page </a>
-  <a href"/contact" id="contact_info_button"> Contact Info</a>
+  <a href="/help" id="help_page_button"> Help Page </a>
+  <a href="/donate" id="donate_page_button"> Donate Page </a>
+  <a href="/contact_info" id="contact_info_button"> Contact Info</a>
 </h6>
 
 <h6 id="for_my_mom"> For My Mom

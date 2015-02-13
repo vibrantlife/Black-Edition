@@ -1,3 +1,4 @@
+
 /*-----------Layout----------------------------------------*/
 
 .top_title_right{
@@ -15,6 +16,24 @@
   top: -16px;
 }
 
+
+.logged_in_indicator{
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+#indicator{
+  position: absolute;
+  color: green;
+  top: 14px;
+}
+#indicator_off{
+  position: absolute;
+  color: red;
+  top: 8px;
+  right: 4px;
+
+}
 #profile_page_button{
   position: relative;
 }
@@ -56,10 +75,85 @@
 /*--------------------------------------------------*/
 
 
+.homepage_main{
+  top: 150px;
+  left: 35%;
+  /*right: 50%;*/
+  position: absolute;
+  background-color: lightblue;
+  padding: 20px;
+  width: 30%;
+  /*background-image: url("homepage_background.jpg");*/
+}
+#signup{
+  font-size: 14px;
+  font-family: fantasy;
+  background: rgb(0, 0, 0); /* Fallback */
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4px;
+}
+.recent_wishes{
+  position: relative;
+  top: 240px;
+  padding: 20px;
+  background: rgb(15, 63, 151); /* Fallback */
+  background: rgba(103, 123, 160, 0.7);
+  width: 30%;
+  left: 34%;
+}
 
+/*--------------------------------------------------*/
 
+.profile_wishes{
+  position: relative;
+  top: 40px;
+  padding: 20px;
+  background: rgb(15, 63, 151); /* Fallback */
+  background: rgba(103, 123, 160, 0.4);
+  width: 30%;
+  left: 34%;
+}
+.profile_header{
+  position: relative;
+  top: 35px;
+  font-family: fantasy;
+  font-weight: bold;
+  font-size: 22px;
+}
+.profile_picture{
+  position: absolute;
+  top: 120px;
+  border: 2px solid black;
+  height: 120px;
+  width: 120px;
+  background-color: navy;
+}
+#profile_name{
+  position: absolute;
+  top: 250px;
+  left: 10px;
+}
+.register_container{
+  position: relative;
+  top: 120px;
+  padding: 20px;
+  background: rgb(15, 63, 151); /* Fallback */
+  background: rgba(103, 123, 160, 0.6);
+  width: 35%;
+  left: 32%;
+}
 
+/*--------------------------------------------------*/
 
+.new_wish{
+  position: relative;
+  top: 200px;
+  padding: 20px;
+  background: rgb(15, 63, 151); /* Fallback */
+  background: rgba(103, 123, 160, 0.4);
+  width: 30%;
+  left: 34%;
+}
 
 
 
@@ -84,19 +178,19 @@
 
 /* unvisited link */
 a:link {
-    color: green;
+    color: #0F3F97;
     text-decoration: none;
 }
 
 /* visited link */
 a:visited {
-    color: maroon;
+    color: #0A1E42;
     text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
-    color: red;
+    color: #677BA0;
     text-decoration: none;
 }
 

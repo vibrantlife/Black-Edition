@@ -1,7 +1,36 @@
-<div class="container">
-  <h1 align="center">Welcome to Wish List</h1>
-</div>
-<br>
-<br>
-<h4 align="center"> Here are your Friends Latest Wishes:  </h4>
+<body> 
+<!-- <img src="/homepage_background" -->
 
+
+  <% if session_current_user == nil %>
+  <div class="homepage_main" align="center">
+    <h1>Welcome to Wish List</h1>
+
+
+  
+ 
+  <h4> Helping to make your <br><br> wishes come true...  </h4><br>
+
+
+    
+    <form action='/login' method="post">
+      User Name: <input type="text" name="handle" placeholder="user name"><br><br>
+      Password: <input type="password" name="password" placeholder="and your password"><br><br>
+      <input type="submit" value="Log in!">
+    </form>
+    <br>
+    <a href="/register" id="signup"> Sign Up </a>
+    <% else %>
+      <div class="recent_wishes" align="center">
+        <h2> Recent Wishes </h2>
+        <% @counter = 0 %>
+        <% Wish.all.each do |wish| %>
+        <% @counter += 1 %>
+        <% if @counter < 11 %>
+        <a href="/wishlistitem/<%=wish.id%>"><%= wish.content %></a><br><br>
+         <% end %>
+        <% end %>
+      </div>
+    <%end%>
+  </div>
+</body>

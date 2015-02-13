@@ -1,10 +1,11 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  has_many :follows, :class_name => "Follow", :foreign_key => "follower_id"
-  has_many :users_followed, :through => :follows, :source => :followed
-  has_many :followings, :class_name => "Follow", :foreign_key => "followed_id"
-  has_many :users_following, :through => :followings, :source => :follower
+  has_many :wishes
+  has_many :friends, :class_name => "Friends", :foreign_key => "friend_id"
+  has_many :users_friended, :through => :friends, :source => :friended
+  has_many :friendings, :class_name => "Friends", :foreign_key => "friended_id"
+  has_many :users_friending, :through => :friendings, :source => :friender
 
 validates :handle, presence: true
 validates :handle, uniqueness: true
