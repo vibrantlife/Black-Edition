@@ -1,0 +1,9 @@
+
+<% User.all.each do |user| %>
+<% if user.id == @id.to_i %>
+<p><%= user.name %></p>
+  <% else %>
+  <%end%>
+<% end %>
+
+

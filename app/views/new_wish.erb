@@ -1,6 +1,6 @@
 <div class="new_wish">
 
-  <form action="/wishlist" method="post">
+  <form action="/user/<%= session_current_user.id %>/wish" method="post">
     Enter a Wish:
     <br>
     <input type="text" name="content" placeholder="Two front teeth">

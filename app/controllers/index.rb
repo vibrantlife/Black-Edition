@@ -64,6 +64,13 @@ get '/profile' do
   erb :profile
 end
 
+get '/user/:id' do
+  @id = params[:id]
+
+  erb :user_profile
+end
+
+
 get '/friends' do 
 
   erb :friends
@@ -85,14 +92,15 @@ get '/contact_info' do
 end
 
 
-get '/wishlist/new' do
+get '/user/:user_id/wish' do
 #return html form to create a new tweet
   erb :new_wish
 end
 
-post '/wishlist' do
+post '/user/:user_id/wish' do
   #create a new snack
-  @wish = Wish.create(content: params[:content], url: params[:url], priority: params[:priority], user_id: session[:current_user_id])
+  @user = User.find(params[:user_id])
+  @wish = @user.wishes.create(content: params[:content], url: params[:url], priority: params[:priority], user_id: session[:current_user_id])
   if @wish.valid?
     redirect '/'
   else
@@ -100,7 +108,7 @@ post '/wishlist' do
   end
 end
 
-get '/wishlistitem/:id' do 
+get '/user/:user_id/wish/:wish_id' do 
   #display a specific snack
   erb :single_wish
 end

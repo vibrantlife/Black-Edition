@@ -8,6 +8,6 @@
 
 <div align="center">
   <% Wish.all.each do |wish| %>
-  <p><%= wish.content %></p>
+  <a href="/user/<%wish.user_id%>"><%= wish.content %></a>
   <% end %>
 </div>

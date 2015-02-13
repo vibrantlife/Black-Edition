@@ -13,7 +13,8 @@
 
 <div class="profile_wishes" align="center">
   <h4> Here are your wishes: </h4>
-    <% Wish.all.each do |wish| %>
+    <% @wishes = Wish.where(user_id: session_current_user.id) %>
+    <% @wishes.each do |wish| %>
     <p><%= wish.content %></p>
     <% end %>
 </div>
