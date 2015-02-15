@@ -4,21 +4,36 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/application.css">
 
+
+
+  
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <script src="/js/application.js"></script>
 
     <title> For my Mom</title>
 
   <h1 class="top_title_right">
-    <a href="/homepage"> Wish List 
+    <style type="text/css">
+      #wish_list_logo{
+        color: lightblue;
+        text-shadow: 1px 2px navy;
+      }
+    </style>
+    <a href="/homepage" id="wish_list_logo"> Wish List 
     </a>
   </h1>
 
   <h5 class="top_nav_left">
     <a href="/profile" id="profile_page_button"> Profile Page</a>
     <a href="/friends" id="friends_page_button"> Friends Page </a>
-    <a href="/user/<%=session_current_user%>/wish" id="Wishlistnew_button"> Add a Wish</a>
+    <% if session_current_user != nil %>
+      <a href="/user/<%=session_current_user.id%>/wish" id="Wishlistnew_button"> Add a Wish </a>
+      <% else %>
+    <% end %>
   </h5>
+
+
 
 </head>
 
@@ -39,7 +54,6 @@
     <a href="/logout">Logout</a><br><br>
       <% else %>
       <p id="indicator_off"> logged out </p>
-
       <% end %>
     </div>
 </div>

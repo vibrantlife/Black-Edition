@@ -1,9 +1,40 @@
 
-<% User.all.each do |user| %>
-<% if user.id == @id.to_i %>
-<p><%= user.name %></p>
-  <% else %>
-  <%end%>
-<% end %>
+<body>
+  <div class="profile_header">
+    <h2 align ="center">Profile of
+      <% User.all.each do |user| %>
+          <% if user.id == @id.to_i %>
+          <% @user = user %>
+        <%= @user_name = user.name%></h2>
+        <% end %>
+      <% end %>
+  </div>
 
+  <div class="profile_picture">
+    <style type="text/css">
+    .profile_picture{
+      background-color: <%= @user.profile_picture %>;
+    }
+  </style>
+  <p> img here </p>
+  <p><%= @user.profile_picture %></p>
+</div>
 
+  <div id="profile_name"> <%= @user_name %>
+  </div>
+  <div class="friend me">
+    <button>Add Friend</button>
+  </div>
+
+  <div class="profile_info">
+    <% User.all.each do |user| %>
+      <% if user.id == @id.to_i %>
+      <p><%=  user.name %> wishes for: </p>
+      <p><% user.wishes.reverse.each do |wish| %></p>
+        <p><a href="/user/<%= user.id %>/wish/<%=wish.id%>"><%= wish.content %></a></p>
+          <%end%>
+        <% else %>
+      <%end%>
+    <% end %>
+  </div>
+</body>

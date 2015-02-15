@@ -1,5 +1,5 @@
 <body> 
-<!-- <img src="/homepage_background" -->
+<!-- <img src="../public/homepage_background" -->
 
 
   <% if session_current_user == nil %>
@@ -13,26 +13,28 @@
 
 
     
-    <form action='/login' method="post">
+    <form class="main_login_form" action='/login' method="post">
       User Name: <input type="text" name="handle" placeholder="user name"><br><br>
       Password: <input type="password" name="password" placeholder="and your password"><br><br>
-      <input type="submit" value="Log in!">
+      <input type="submit" value="Log in">
     </form>
     <br>
-    <a href="/register" id="signup"> Sign Up </a>
+    <a href="/register" id="signup"> <button>Sign Up</button> </a>
+
+  </div>
     <% else %>
       <div class="recent_wishes" align="center">
         <h2> Recent Wishes </h2>
         <% @counter = 0 %>
-        <% Wish.all.each do |wish| %>
+        <% Wish.all.reverse.each do |wish| %>
         <% @counter += 1 %>
         <% if @counter < 11 %>
         <% @dude = (wish.user_id).to_i %>
             <a href="/user/<%=@dude%>"><%= wish.content %></a>
-         <% end %>
          <br><br>
+         <% end %>
         <% end %>
       </div>
     <%end%>
-  </div>
+</div>
 </body>

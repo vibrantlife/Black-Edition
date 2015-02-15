@@ -33,7 +33,7 @@ get '/register' do
 end
 
 post '/register' do
-  @new_user = User.create(name: params[:name], handle: params[:handle], password: params[:password])
+  @new_user = User.create(name: params[:name], handle: params[:handle], password: params[:password], profile_picture: params[:profile_picture])
   if @new_user.valid?
       session_set_current_user(@new_user)
       redirect('/profile')
@@ -102,7 +102,7 @@ post '/user/:user_id/wish' do
   @user = User.find(params[:user_id])
   @wish = @user.wishes.create(content: params[:content], url: params[:url], priority: params[:priority], user_id: session[:current_user_id])
   if @wish.valid?
-    redirect '/'
+    erb :_wishes, layout: false
   else
     erb :error
   end
@@ -124,9 +124,13 @@ put '/wishlistitem/:id' do
   redirect '/'
 end
 
-delete '/wishlistitem/:id' do
+
+
+delete '/user/:user_id/wish/:wish_id/delete' do
   #delete a snack
-  redirect '/homepage'
+  @wish = Wish.find(params[:wish_id])
+  @wish.destroy
+  
   p "8"* 100
 end
 
