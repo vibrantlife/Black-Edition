@@ -1,0 +1,33 @@
+<div class="page">
+    <div class="content">
+
+<!-- email, password, signup forms -->
+<%if session_logged_in?%>
+<div class="index_background">
+<ul class="years-90s">
+  <li class="years"><a href='/year'>1996</a><br>High score: 0</li>
+  <li class="years"><a href='#'>1997</a></li>
+  <li class="years"><a href='#'>1998</a></li>
+  <li class="years"><a href='#'>1999</a></li>
+  <li class="years"><a href='#'>2000</a></li>
+</ul>
+<h1>Welcome, <%=@user.username%></h1>
+  <h2>Click a year to test your movie quality perception!</h2>
+  <ul class="years-2000s">
+  <li class="years"><a href='#'>2001</a></li>
+  <li class="years"><a href='#'>2002</a></li>
+  <li class="years"><a href='#'>2003</a></li>
+  <li class="years"><a href='#'>2004</a></li>
+  <li class="years"><a href='#'>2005</a></li>
+</ul>
+</div>
+<%else%>
+  <div class="login_landing">
+    <h1>Welcome to Timeless Film!</h1>
+    <p>Please log in or sign up...</p>
+  </div>
+  <% end %>
+</div>
+</div>
+
+

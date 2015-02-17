@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -18,6 +18,28 @@
   <title></title>
 </head>
 <body>
+    <nav>
+ <ul class="home_ul">      <li class="nav_button"><a href="/">Home</a></li></ul>
+    <ul class="logout">
+    <% if session_logged_in? %>
+    <% session_logout_and_redirect %>
+    <% end %>
+
+      <% if current_user %>
+        <li class="logout">
+          <form id="sign-out" action="/logout" method="post">
+            <input name="_method" type="hidden" value="delete" />
+            <input type="submit" class="nav_button" value="Sign Out">
+          </form>
+        </li>
+      <% else %>
+        <li class="nav_button"><a href="/login">Sign In</a></li>
+        <li class="nav_button"><a href="/register">Sign Up</a></li>
+
+      <% end %>
+    </ul>
+  </nav>
   <%= yield %>
+  <p class="thankyou">All info courtesy of IMDB<br>IMDb<br><a href="http://www.imdb.com/">http://www.imdb.com/</a><br>Used with permission
 </body>
 </html>

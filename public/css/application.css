@@ -1,0 +1,116 @@
+/* HEADER */
+
+nav{
+  display:block;
+  width:60%;
+  height:40px;
+  border:1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 5px;
+/*  background-image: url('http://thumbs.dreamstime.com/z/tribal-vintage-ethnic-pattern-seamless-illustration-your-business-34351188.jpg');*/
+}
+
+ul.logout {
+  float: right;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* Buttons */
+
+li.nav_button, input.submit, input.nav_button, li.years {
+  font-weight: bold;
+  background-color: rgb(99, 166, 47);
+  border-radius: 5px;
+  border-top: 1px solid rgb(99, 166, 47);
+  border-right: 1px solid rgb(99, 166, 47);
+  border-bottom: 1px solid rgb(99, 166, 47);
+  border-left: 1px solid rgb(99, 166, 47);
+  display:inline-block;
+
+  list-style-type: none !important;
+  margin-top: -18px;
+  margin-bottom: 21px;
+  padding: 2px 8px 2px 6px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: auto;
+  text-shadow: rgb(76, 144, 33) 0px -1px 0px;
+  width: 90px;
+}
+
+li.logout {
+  list-style-type: none;
+}
+
+li.nav_button a, input.submit, input.nav_button, li.years a {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+li.years a {
+  font-size: 24px;
+}
+
+ul.home_ul {
+  display:inline-block;
+}
+
+ul.years-2000s {
+  padding-top: 5%;
+}
+
+li.years {
+  display: inline-block;
+  margin-left: 40px;
+  }
+/* Content */
+
+.content {
+  text-align: center;
+}
+
+/* Register */
+input.text {
+margin-bottom: 6px;
+}
+
+div.container {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 400px;
+  background-color: lightgrey;
+  display: none;
+}
+
+.page {
+  display:block;
+  width:60%;
+  margin-left: auto;
+  border:1px solid black;
+  padding: 20px;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.index_background {
+  background-image: url('http://cdn29.us2.fansshare.com/pictures/redcarpet/red-carpet-stairs-stock-wallpaper-1793471676.jpg');
+  background-size: 40%;
+      background-repeat: no-repeat;
+
+}
+
+/* FOOTER */
+p.thankyou {
+display: block;
+width: 60%;
+text-align: center;
+width: auto;
+font-size: 10px;
+}
