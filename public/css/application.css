@@ -4,7 +4,7 @@ nav{
   display:block;
   width:60%;
   height:40px;
-  border:1px solid black;
+  border:1px solid #d0d0d0;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -28,7 +28,7 @@ li.nav_button, input.submit, input.nav_button, li.years {
   border-right: 1px solid rgb(99, 166, 47);
   border-bottom: 1px solid rgb(99, 166, 47);
   border-left: 1px solid rgb(99, 166, 47);
-  display:inline-block;
+  /*display:inline-block;*/
 
   list-style-type: none !important;
   margin-top: -18px;
@@ -57,17 +57,19 @@ li.years a {
   font-size: 24px;
 }
 
-ul.home_ul {
+ul.home_ul, li.nav_button {
   display:inline-block;
 }
 
-ul.years-2000s {
+ul.years-2000s, ul.years-90s {
   padding-top: 5%;
+  display: inline-block;
+  margin-left: -9%;
 }
 
 li.years {
   display: inline-block;
-  margin-left: 40px;
+  margin-left: 20px;
   }
 /* Content */
 
@@ -93,17 +95,17 @@ div.container {
   display:block;
   width:60%;
   margin-left: auto;
-  border:1px solid black;
+  border:1px solid #d0d0d0;
   padding: 20px;
   margin-right: auto;
   border-radius: 5px;
 }
 
 .index_background {
-  background-image: url('http://cdn29.us2.fansshare.com/pictures/redcarpet/red-carpet-stairs-stock-wallpaper-1793471676.jpg');
-  background-size: 40%;
-      background-repeat: no-repeat;
-
+  background-image: url('http://assets.coca-colacompany.com/c1/68/acc8a3b8486d955d71deab74404e/debates-red-carpet-604.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+ /*background: rgba(204, 204, 204, 0.5);*/
 }
 
 /* FOOTER */
