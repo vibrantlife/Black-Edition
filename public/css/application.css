@@ -20,12 +20,13 @@ li {
 .navbar {
   background-color: #690E73;
   width: 100%;
+  height: 5%;
 }
 
 
 .navbar a:link, a:visited {
     display: block;
-    width: 120px;
+    width: 125px;
     font-weight: bold;
     color: #FFFFFF;
     background-color: #690E73;
@@ -53,7 +54,6 @@ li {
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
   height: 500px;
   position: relative;
 }

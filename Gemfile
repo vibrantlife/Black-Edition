@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
+# csv parser
+gem 'smarter_csv'
+
 # PostgreSQL driver
 gem 'pg'
 
