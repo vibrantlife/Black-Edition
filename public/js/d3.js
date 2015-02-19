@@ -57,13 +57,14 @@ function randomData (){
   // return { label: "Motor vehicle theft", value: 100}
   // return labels.map(function(label){
     // return { label: label, value: 10 }
-  return getData(schoolData,'institution', "sexOffenses", '2010');
+  return getData(schoolData,'institution', $("sexOffenses", $("input[name=year]").val());
+    // return getData(schoolData, 'institution', 'sexOffenses', '2011');
   // });
 }
 
 change(randomData());
 
-d3.select(".randomize")
+d3.select(".Year")
   .on("click", function(){
     change(randomData());
   });
@@ -175,7 +176,7 @@ schoolData= [
     {
         "Survey year": "2010",
         "id": "110565",
-        "institution": "California State University-Fullerton",
+        "institution": "CSU-Fullerton",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "35590",
@@ -195,7 +196,7 @@ schoolData= [
     {
         "Survey year": "2010",
         "id": "110583",
-        "institution": "California State University-Long Beach",
+        "institution": "CSU-Long Beach",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "33416",
@@ -212,7 +213,7 @@ schoolData= [
     {
         "Survey year": "2010",
         "id": "110608",
-        "institution": "California State University-Northridge",
+        "institution": "CSU-Northridge",
         "Campus ID": "1",
         " Campus Name": "California State University- Northridge",
         "Institution Size": "35272",
@@ -264,7 +265,7 @@ schoolData= [
     {
         "Survey year": "2010",
         "id": "110635",
-        "institution": "University of California-Berkeley",
+        "institution": "UC-Berkeley",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "35833",
@@ -281,7 +282,7 @@ schoolData= [
     {
         "Survey year": "2010",
         "id": "110644",
-        "institution": "University of California-Davis",
+        "institution": "UC-Davis",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "31392",
@@ -299,7 +300,7 @@ schoolData= [
     {
         "Survey year": "2010",
         "id": "110662",
-        "institution": "University of California-Los Angeles",
+        "institution": "UC-Los Angeles",
         "Campus ID": "1",
         " Campus Name": "UCLA",
         "Institution Size": "38157",

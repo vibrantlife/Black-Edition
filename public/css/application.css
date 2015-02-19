@@ -49,6 +49,10 @@ li {
   font-family: sans-serif;
 }
 
+.year {
+  margin: auto;
+}
+
 
 /*d3 styling -- moving pie chart */
 
@@ -75,19 +79,6 @@ polyline{
 }
 
 
-
-/*donut with dropdown list ?*/
-
-.axis text {
-  font: 10px sans-serif;
-}
-
-.axis line,
-.axis path {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
 
 
 

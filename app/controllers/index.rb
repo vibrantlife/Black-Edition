@@ -20,7 +20,7 @@ get "/homepage" do
   erb :homepage
 end
 
-get "/data/all" do
+get "/data/sexoffenses" do
   # content_type :json
 
 erb :allschooldata
