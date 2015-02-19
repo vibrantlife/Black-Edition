@@ -1,5 +1,12 @@
+/*entire site styling*/
 html {
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .homepage {
@@ -21,6 +28,8 @@ li {
   background-color: #690E73;
   width: 100%;
   height: 5%;
+  text-align:center;
+    padding:5px;
 }
 
 
@@ -54,7 +63,50 @@ li {
 }
 
 
-/*d3 styling -- moving pie chart */
+#crime-select {
+    line-height:30px;
+    background-color:#7A991A;
+    height:900px;
+    width:100px;
+    float:left;
+    padding:10px;
+    margin-right: 20px;
+}
+
+#crime-select a:link, a:visited {
+  display: block;
+    width: 100px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#crime-select a:hover, a:active {
+      background-color: #690E73;
+}
+
+#section {
+  width: 80%;
+  padding:20px;
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;
+   position: fixed;
+   width: 100%;
+   bottom: 0;
+}
+
+/*homepage */
+
+
+
+/*d3 styling  */
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

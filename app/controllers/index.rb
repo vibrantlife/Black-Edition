@@ -23,5 +23,5 @@ end
 get "/data/sexoffenses" do
   # content_type :json
 
-erb :allschooldata
+erb :sexoffenses
 end

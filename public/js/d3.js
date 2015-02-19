@@ -49,24 +49,17 @@ function getData(data, compare, type, year) {
 }
 
 var color = d3.scale.ordinal()
-  // .domain([schoolData[0].institution, schoolData[1].institution])
   .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
-function randomData (){
-  // var labels = color.domain();
-  // return { label: "Motor vehicle theft", value: 100}
-  // return labels.map(function(label){
-    // return { label: label, value: 10 }
-  return getData(schoolData,'institution', $("sexOffenses", $("input[name=year]").val());
-    // return getData(schoolData, 'institution', 'sexOffenses', '2011');
-  // });
+function sexCrimeData (){
+  return getData(schoolData,'institution', 'sexOffenses', $("input[name=year]").val());
 }
 
-change(randomData());
+change(sexCrimeData());
 
-d3.select(".Year")
+d3.select(".view")
   .on("click", function(){
-    change(randomData());
+    change(sexCrimeData());
   });
 
 
