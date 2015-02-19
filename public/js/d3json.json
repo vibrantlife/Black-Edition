@@ -1,177 +1,4 @@
- $(document).ready(function() {
-
-
-
- // * ------d3 js -------------*
-var svg = d3.select("body")
-  .append("svg")
-  .append("g")
-
-svg.append("g")
-  .attr("class", "slices");
-svg.append("g")
-  .attr("class", "labels");
-svg.append("g")
-  .attr("class", "lines");
-
-var width = 960,
-    height = 450,
-  radius = Math.min(width, height) / 2;
-
-var pie = d3.layout.pie()
-  .sort(null)
-  .value(function(d) {
-    return d.value;
-  });
-
-var arc = d3.svg.arc()
-  .outerRadius(radius * 0.8)
-  .innerRadius(radius * 0.4);
-
-var outerArc = d3.svg.arc()
-  .innerRadius(radius * 0.9)
-  .outerRadius(radius * 0.9);
-
-svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-var key = function(d){ return d.data.label; };
-
-
-function getData(data, compare, type, year) {
-    var results = [];
-    for (i = 0; i < data.length; i++) {
-        if (data[i]["Survey year"] == year){
-        results.push( { label: data[i][compare], value: data[i][type] })
-
- }
-    }
-    return results;
-}
-
-var color = d3.scale.ordinal()
-  // .domain([schoolData[0].institution, schoolData[1].institution])
-  .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
-
-function randomData (){
-  // var labels = color.domain();
-  // return { label: "Motor vehicle theft", value: 100}
-  // return labels.map(function(label){
-    // return { label: label, value: 10 }
-  return getData(schoolData,'institution', "sexOffenses", '2010');
-  // });
-}
-
-change(randomData());
-
-d3.select(".randomize")
-  .on("click", function(){
-    change(randomData());
-  });
-
-
-function change(data) {
-
-  /* ------- PIE SLICES -------*/
-  var slice = svg.select(".slices").selectAll("path.slice")
-    .data(pie(data), key);
-
-  slice.enter()
-    .insert("path")
-    .style("fill", function(d) { return color(d.data.label); })
-    .attr("class", "slice");
-
-  slice
-    .transition().duration(1000)
-    .attrTween("d", function(d) {
-      this._current = this._current || d;
-      var interpolate = d3.interpolate(this._current, d);
-      this._current = interpolate(0);
-      return function(t) {
-        return arc(interpolate(t));
-      };
-    })
-
-  slice.exit()
-    .remove();
-
-  /* ------- TEXT LABELS -------*/
-
-  var text = svg.select(".labels").selectAll("text")
-    .data(pie(data), key);
-
-  text.enter()
-    .append("text")
-    .attr("dy", ".35em")
-    .text(function(d) {
-      return d.data.label;
-    });
-
-  function midAngle(d){
-    return d.startAngle + (d.endAngle - d.startAngle)/2;
-  }
-
-  text.transition().duration(1000)
-    .attrTween("transform", function(d) {
-      this._current = this._current || d;
-      var interpolate = d3.interpolate(this._current, d);
-      this._current = interpolate(0);
-      return function(t) {
-        var d2 = interpolate(t);
-        var pos = outerArc.centroid(d2);
-        pos[0] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
-        return "translate("+ pos +")";
-      };
-    })
-    .styleTween("text-anchor", function(d){
-      this._current = this._current || d;
-      var interpolate = d3.interpolate(this._current, d);
-      this._current = interpolate(0);
-      return function(t) {
-        var d2 = interpolate(t);
-        return midAngle(d2) < Math.PI ? "start":"end";
-      };
-    });
-
-  text.exit()
-    .remove();
-
-  /* ------- SLICE TO TEXT POLYLINES -------*/
-
-  var polyline = svg.select(".lines").selectAll("polyline")
-    .data(pie(data), key);
-
-  polyline.enter()
-    .append("polyline");
-
-  polyline.transition().duration(1000)
-    .attrTween("points", function(d){
-      this._current = this._current || d;
-      var interpolate = d3.interpolate(this._current, d);
-      this._current = interpolate(0);
-      return function(t) {
-        var d2 = interpolate(t);
-        var pos = outerArc.centroid(d2);
-        pos[0] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
-        return [arc.centroid(d2), outerArc.centroid(d2), pos];
-      };
-    });
-
-  polyline.exit()
-    .remove();
-};
-
-
-
-
-
-  });
-
-
-
-
-
-
-schoolData= [
+schools = [
     {
         "Survey year": "2010",
         "id": "110565",
@@ -189,9 +16,57 @@ schoolData= [
         "motorTheft": "10",
         "arson": "0"
     },
-
-
-
+    {
+        "Survey year": "2010",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "3",
+        " Campus Name": "Zzyzx",
+        "Institution Size": "35590",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2010",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "4",
+        " Campus Name": "Santa Ana Central Arts",
+        "Institution Size": "35590",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2010",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "5",
+        " Campus Name": "Irvine Campus",
+        "Institution Size": "35590",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
     {
         "Survey year": "2010",
         "id": "110583",
@@ -260,7 +135,23 @@ schoolData= [
         "motorTheft": "16",
         "arson": "3"
     },
-
+    {
+        "Survey year": "2010",
+        "id": "122755",
+        "institution": "San Jose State University",
+        "Campus ID": "2",
+        " Campus Name": "Moss Landing Marine Laboratory",
+        "Institution Size": "29076",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
     {
         "Survey year": "2010",
         "id": "110635",
@@ -295,7 +186,23 @@ schoolData= [
         "motorTheft": "9",
         "arson": "2"
     },
-
+    {
+        "Survey year": "2010",
+        "id": "110644",
+        "institution": "University of California-Davis",
+        "Campus ID": "2",
+        " Campus Name": "UC Davis Medical Center",
+        "Institution Size": "31392",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "Sex_offenses - Forcible": "5",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "1",
+        "Aggravated assault": "2",
+        "burglary": "4",
+        "motorTheft": "2",
+        "arson": "0"
+    },
     {
         "Survey year": "2010",
         "id": "110662",
@@ -330,8 +237,57 @@ schoolData= [
         "motorTheft": "14",
         "arson": "0"
     },
-
-
+    {
+        "Survey year": "2011",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "3",
+        " Campus Name": "Zzyzx",
+        "Institution Size": "36156",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2011",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "4",
+        " Campus Name": "Santa Ana Central Arts",
+        "Institution Size": "36156",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "1",
+        "motorTheft": "0",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2011",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "5",
+        " Campus Name": "Irvine Campus",
+        "Institution Size": "36156",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
     {
         "Survey year": "2011",
         "id": "110583",
@@ -400,7 +356,23 @@ schoolData= [
         "motorTheft": "13",
         "arson": "4"
     },
-
+    {
+        "Survey year": "2011",
+        "id": "122755",
+        "institution": "San Jose State University",
+        "Campus ID": "2",
+        " Campus Name": "Moss Landing Marine Laboratory",
+        "Institution Size": "30236",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
     {
         "Survey year": "2011",
         "id": "110635",
@@ -435,7 +407,23 @@ schoolData= [
         "motorTheft": "8",
         "arson": "1"
     },
-
+    {
+        "Survey year": "2011",
+        "id": "110644",
+        "institution": "University of California-Davis",
+        "Campus ID": "2",
+        " Campus Name": "UC Davis Medical Center",
+        "Institution Size": "31732",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "2",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "1",
+        "Aggravated assault": "3",
+        "burglary": "7",
+        "motorTheft": "5",
+        "arson": "0"
+    },
     {
         "Survey year": "2011",
         "id": "110662",
@@ -470,8 +458,57 @@ schoolData= [
         "motorTheft": "15",
         "arson": "0"
     },
-
-
+    {
+        "Survey year": "2012",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "3",
+        " Campus Name": "Zzyzx",
+        "Institution Size": "37677",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2012",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "4",
+        " Campus Name": "Santa Ana Central Arts",
+        "Institution Size": "37677",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "1",
+        "motorTheft": "0",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2012",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "5",
+        " Campus Name": "Irvine Campus",
+        "Institution Size": "37677",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
     {
         "Survey year": "2012",
         "id": "110583",
@@ -540,7 +577,23 @@ schoolData= [
         "motorTheft": "9",
         "arson": "1"
     },
-
+    {
+        "Survey year": "2012",
+        "id": "122755",
+        "institution": "San Jose State University",
+        "Campus ID": "2",
+        " Campus Name": "Moss Landing Marine Laboratory",
+        "Institution Size": "30448",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
     {
         "Survey year": "2012",
         "id": "110635",
@@ -577,6 +630,23 @@ schoolData= [
     },
     {
         "Survey year": "2012",
+        "id": "110644",
+        "institution": "University of California-Davis",
+        "Campus ID": "2",
+        " Campus Name": "UC Davis Medical Center",
+        "Institution Size": "32354",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "2",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "2",
+        "Aggravated assault": "3",
+        "burglary": "6",
+        "motorTheft": "8",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2012",
         "id": "110662",
         "institution": "University of California-Los Angeles",
         "Campus ID": "1",
@@ -609,8 +679,74 @@ schoolData= [
         "motorTheft": "9",
         "arson": "0"
     },
-
-
+    {
+        "Survey year": "2013",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "3",
+        " Campus Name": "Zzyzx",
+        "Institution Size": "38325",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2013",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "4",
+        " Campus Name": "Santa Ana Central Arts",
+        "Institution Size": "38325",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2013",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "5",
+        " Campus Name": "Irvine Campus",
+        "Institution Size": "38325",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2013",
+        "id": "110565",
+        "institution": "California State University-Fullerton",
+        "Campus ID": "6",
+        " Campus Name": "Garden Grove Campus",
+        "Institution Size": "38325",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
     {
         "Survey year": "2013",
         "id": "110583",
@@ -679,7 +815,23 @@ schoolData= [
         "motorTheft": "6",
         "arson": "1"
     },
-
+    {
+        "Survey year": "2013",
+        "id": "122755",
+        "institution": "San Jose State University",
+        "Campus ID": "2",
+        " Campus Name": "Moss Landing Marine Laboratory",
+        "Institution Size": "31278",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "0",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "0",
+        "motorTheft": "0",
+        "arson": "0"
+    },
     {
         "Survey year": "2013",
         "id": "110635",
@@ -716,6 +868,23 @@ schoolData= [
     },
     {
         "Survey year": "2013",
+        "id": "110644",
+        "institution": "University of California-Davis",
+        "Campus ID": "2",
+        " Campus Name": "UC Davis Medical Center",
+        "Institution Size": "33307",
+        "Murder/Non-negligent manslaughter": "0",
+        "Negligent manslaughter": "0",
+        "sexOffenses": "3",
+        "Sex offenses - Non-forcible": "0",
+        "robbery": "0",
+        "Aggravated assault": "0",
+        "burglary": "4",
+        "motorTheft": "2",
+        "arson": "0"
+    },
+    {
+        "Survey year": "2013",
         "id": "110662",
         "institution": "University of California-Los Angeles",
         "Campus ID": "1",
@@ -732,87 +901,3 @@ schoolData= [
         "arson": "1"
     },
 ];
-
-
-
-
-
-
-
-// schools = [];
-
-// schoolData.forEach(function(object) {
-//     // if(object['institution'] === "University of California-Los Angeles") {
-//         for (var i = 0; i < )
-//         schools.push(object.institution);
-//     }
-// });
-
-
-
-//  function getInfo(schoolData) {
-
-//     var lenSchool = schoolData.length;
-//     // var lenCrime = crimeArray.length;
-//     console.log(lenSchool);
-//     var returnArray = [];
-//     var counter = 1;
-//     for (var i = 0; i < lenSchool; i++, counter++) {
-//         var hash = schoolArray[i];
-
-//         returnArray.push(hash.institution);
-
-//         // for (var j = 0; j < lenCrime; j++) {
-//         //     var crime = crimeArray[j];
-//         //     console.log(crime + ": " + hash[crime]);
-//         // }
-//     }
-//     return returnArray;
-// }
-
-
-
-
-// function schoolData(schoolArray, crimeArray) {
-//     var lenSchool = schoolArray.length;
-//     var lenCrime = crimeArray.length;
-//     var returnArray = [];
-//     var counter = 1;
-//     for (var i = 0; i < lenSchool; i++, counter++) {
-//         var hash = schoolArray[i];
-
-//         returnArray.push(hash.institution);
-
-//         for (var j = 0; j < lenCrime; j++) {
-//             var crime = crimeArray[j];
-//             console.log(crime + ": " + hash[crime]);
-//         }
-//     }
-//     return returnArray;
-// }
-
-// crimes = ["sexOffenses", "robbery", "burglary", "motorTheft"];
-// console.log(schoolData(schoolData2010, crimes));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

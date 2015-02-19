@@ -19,3 +19,9 @@ get "/homepage" do
   #
   erb :homepage
 end
+
+get "/data/all" do
+  # content_type :json
+
+erb :allschooldata
+end
