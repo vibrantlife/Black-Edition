@@ -52,7 +52,7 @@ var color = d3.scale.ordinal()
   .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
 function sexCrimeData (){
-  return getData(schoolData,'institution', 'sexOffenses', $("input[name=year]").val());
+  return getData(schoolData,'institution', 'arson', $("input[name=year]").val());
 }
 
 change(sexCrimeData());
@@ -208,7 +208,7 @@ schoolData= [
         "id": "110608",
         "institution": "CSU-Northridge",
         "Campus ID": "1",
-        " Campus Name": "California State University- Northridge",
+        " Campus Name": "CSU- Northridge",
         "Institution Size": "35272",
         "Murder/Non-negligent manslaughter": "0",
         "Negligent manslaughter": "0",
@@ -310,7 +310,7 @@ schoolData= [
     {
         "Survey year": "2011",
         "id": "110565",
-        "institution": "California State University-Fullerton",
+        "institution": "CSU-Fullerton",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "36156",
@@ -329,7 +329,7 @@ schoolData= [
     {
         "Survey year": "2011",
         "id": "110583",
-        "institution": "California State University-Long Beach",
+        "institution": "CSU-Long Beach",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "34870",
@@ -346,9 +346,9 @@ schoolData= [
     {
         "Survey year": "2011",
         "id": "110608",
-        "institution": "California State University-Northridge",
+        "institution": "CSU-Northridge",
         "Campus ID": "1",
-        " Campus Name": "California State University- Northridge",
+        " Campus Name": "CSU- Northridge",
         "Institution Size": "36911",
         "Murder/Non-negligent manslaughter": "0",
         "Negligent manslaughter": "0",
@@ -415,7 +415,7 @@ schoolData= [
     {
         "Survey year": "2011",
         "id": "110644",
-        "institution": "University of California-Davis",
+        "institution": "UC-Davis",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "31732",
@@ -433,7 +433,7 @@ schoolData= [
     {
         "Survey year": "2011",
         "id": "110662",
-        "institution": "University of California-Los Angeles",
+        "institution": "UC-Los Angeles",
         "Campus ID": "1",
         " Campus Name": "UCLA",
         "Institution Size": "39271",
@@ -450,7 +450,7 @@ schoolData= [
     {
         "Survey year": "2012",
         "id": "110565",
-        "institution": "California State University-Fullerton",
+        "institution": "CSU-Fullerton",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "37677",
@@ -469,7 +469,7 @@ schoolData= [
     {
         "Survey year": "2012",
         "id": "110583",
-        "institution": "California State University-Long Beach",
+        "institution": "CSU-Long Beach",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "36279",
@@ -486,9 +486,9 @@ schoolData= [
     {
         "Survey year": "2012",
         "id": "110608",
-        "institution": "California State University-Northridge",
+        "institution": "CSU-Northridge",
         "Campus ID": "1",
-        " Campus Name": "California State University- Northridge",
+        " Campus Name": "CSU- Northridge",
         "Institution Size": "36164",
         "Murder/Non-negligent manslaughter": "0",
         "Negligent manslaughter": "0",
@@ -538,7 +538,7 @@ schoolData= [
     {
         "Survey year": "2012",
         "id": "110635",
-        "institution": "University of California-Berkeley",
+        "institution": "UC-Berkeley",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "35893",
@@ -555,7 +555,7 @@ schoolData= [
     {
         "Survey year": "2012",
         "id": "110644",
-        "institution": "University of California-Davis",
+        "institution": "UC-Davis",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "32354",
@@ -572,7 +572,7 @@ schoolData= [
     {
         "Survey year": "2012",
         "id": "110662",
-        "institution": "University of California-Los Angeles",
+        "institution": "UC-Los Angeles",
         "Campus ID": "1",
         " Campus Name": "UCLA",
         "Institution Size": "39945",
@@ -589,7 +589,7 @@ schoolData= [
     {
         "Survey year": "2013",
         "id": "110565",
-        "institution": "California State University-Fullerton",
+        "institution": "CSU-Fullerton",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "38325",
@@ -608,7 +608,7 @@ schoolData= [
     {
         "Survey year": "2013",
         "id": "110583",
-        "institution": "California State University-Long Beach",
+        "institution": "CSU-Long Beach",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "35586",
@@ -625,9 +625,9 @@ schoolData= [
     {
         "Survey year": "2013",
         "id": "110608",
-        "institution": "California State University-Northridge",
+        "institution": "CSU-Northridge",
         "Campus ID": "1",
-        " Campus Name": "California State University- Northridge",
+        " Campus Name": "CSU- Northridge",
         "Institution Size": "38310",
         "Murder/Non-negligent manslaughter": "0",
         "Negligent manslaughter": "0",
@@ -677,7 +677,7 @@ schoolData= [
     {
         "Survey year": "2013",
         "id": "110635",
-        "institution": "University of California-Berkeley",
+        "institution": "UC-Berkeley",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "36198",
@@ -694,7 +694,7 @@ schoolData= [
     {
         "Survey year": "2013",
         "id": "110644",
-        "institution": "University of California-Davis",
+        "institution": "UC-Davis",
         "Campus ID": "1",
         " Campus Name": "Main Campus",
         "Institution Size": "33307",
@@ -711,7 +711,7 @@ schoolData= [
     {
         "Survey year": "2013",
         "id": "110662",
-        "institution": "University of California-Los Angeles",
+        "institution": "UC-Los Angeles",
         "Campus ID": "1",
         " Campus Name": "UCLA",
         "Institution Size": "40795",
@@ -733,60 +733,9 @@ schoolData= [
 
 
 
-// schools = [];
-
-// schoolData.forEach(function(object) {
-//     // if(object['institution'] === "University of California-Los Angeles") {
-//         for (var i = 0; i < )
-//         schools.push(object.institution);
-//     }
-// });
 
 
 
-//  function getInfo(schoolData) {
-
-//     var lenSchool = schoolData.length;
-//     // var lenCrime = crimeArray.length;
-//     console.log(lenSchool);
-//     var returnArray = [];
-//     var counter = 1;
-//     for (var i = 0; i < lenSchool; i++, counter++) {
-//         var hash = schoolArray[i];
-
-//         returnArray.push(hash.institution);
-
-//         // for (var j = 0; j < lenCrime; j++) {
-//         //     var crime = crimeArray[j];
-//         //     console.log(crime + ": " + hash[crime]);
-//         // }
-//     }
-//     return returnArray;
-// }
-
-
-
-
-// function schoolData(schoolArray, crimeArray) {
-//     var lenSchool = schoolArray.length;
-//     var lenCrime = crimeArray.length;
-//     var returnArray = [];
-//     var counter = 1;
-//     for (var i = 0; i < lenSchool; i++, counter++) {
-//         var hash = schoolArray[i];
-
-//         returnArray.push(hash.institution);
-
-//         for (var j = 0; j < lenCrime; j++) {
-//             var crime = crimeArray[j];
-//             console.log(crime + ": " + hash[crime]);
-//         }
-//     }
-//     return returnArray;
-// }
-
-// crimes = ["sexOffenses", "robbery", "burglary", "motorTheft"];
-// console.log(schoolData(schoolData2010, crimes));
 
 
 

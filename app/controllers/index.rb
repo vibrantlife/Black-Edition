@@ -25,3 +25,23 @@ get "/data/sexoffenses" do
 
 erb :sexoffenses
 end
+
+get "/data/arson" do
+
+  erb :arson
+end
+
+get "/data/burglary" do
+
+  erb :burglary
+end
+
+get "/data/vehicletheft" do
+
+  erb :vehicletheft
+end
+
+
+get "/gettingshit" do
+  ''
+end

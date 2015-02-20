@@ -13,23 +13,25 @@ body {
   text-align: center;
 }
 
-ul {
+.navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-li {
+.navbar li {
     float: left;
+    list-style-type: none;
 }
 
 .navbar {
   background-color: #690E73;
   width: 100%;
   height: 5%;
-  text-align:center;
-    padding:5px;
+  text-align: center;
+  padding: 5px;
+  margin: 0;
 }
 
 
@@ -48,6 +50,7 @@ li {
 .navbar a:hover, a:active {
     background-color: #7A991A;
 }
+
 
 .index_main_body{
   margin: auto;
@@ -92,7 +95,7 @@ li {
   padding:20px;
 }
 #footer {
-    background-color:black;
+    background-color:#690E73;
     color:white;
     clear:both;
     text-align:center;
@@ -101,6 +104,7 @@ li {
    width: 100%;
    bottom: 0;
 }
+
 
 /*homepage */
 
