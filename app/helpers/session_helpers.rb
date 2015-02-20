@@ -38,7 +38,7 @@ helpers do
         session_set_current_user candidate if candidate.password == password
       end
     else
-      false # stuff
+      false
     end
   end
 end

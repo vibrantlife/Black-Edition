@@ -2,8 +2,8 @@ require 'smarter_csv'
 
 get "/logout" do
   #log out user
-  session_logout
-  redirect ('/')
+  # session_logout
+  redirect '/'
 end
 
 get "/" do
@@ -13,6 +13,11 @@ get "/" do
   else
     erb :index
   end
+end
+
+get '/create/user' do
+
+  erb :create_user
 end
 
 get "/homepage" do
@@ -41,7 +46,3 @@ get "/data/vehicletheft" do
   erb :vehicletheft
 end
 
-
-get "/gettingshit" do
-  ''
-end

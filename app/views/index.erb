@@ -12,18 +12,20 @@
 <body>
   <div class="index_main_body">
 
-    <form action='/login' method="post">
+    <form on submit="return false" >
       Email: <input type="text" name="email" placeholder="nichole@datavizion.com">
       <br><br>
       Password: <input type="password" name="password" placeholder="******">
       <br><br>
-      <input type="submit" value="Log in!">
+      <input id="login" type="submit" value="Log in!">
     </form>
     <br><br><br>
-    <form action='/register' method="post">
-      Enter Your Email: <input type="text" name="user_name" placeholder="User Name">
+    <form action='/homepage' method="post">
+      Enter Your Email: <id ="email" input type="text" name="user_name" placeholder="User Name">
       <br><br>
-      Choose a Password: <input type="password" name="password" placeholder="Password">
+      Choose a Password: <id ="password" input type="password" name="password" placeholder="Password">
       <br><br>
       <input type="submit" value="Register!">
     </form>
+
+  </body>
