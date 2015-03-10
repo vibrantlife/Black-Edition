@@ -46,11 +46,11 @@ li {
     border: 1px solid black;
     border-radius: 25px;
     padding: 25px;
-    height: 350px;
-    width: 350px;
+    height: 450px;
+    width: 450px;
     position: absolute;
-    margin: -138px 0 0 250px;
-    box-shadow: 0 8px 6px black;
+    margin: 108px 0 0 650px;
+    box-shadow: 0 8px 6px #ccc;
 }
 
 .index_main_body input {
@@ -86,8 +86,24 @@ li {
         60%  {left:-8px;}
         100% {left:0px;}
     }
+.index_main_body input[type=submit]{
+    float:right;
+    margin:1em 0;
+    padding:.5em 1em;
+    border:0;
+    border-radius:2px;
+    background:#565656;
+    color:#fff;
+}
 
+.index_main_body input[type=submit]:hover {
+    background-color: #333;
+}
 
+.index_main_body input[type=submit]:active {
+    position: relative;
+    top: 2px;
+}
 
 /*main page stylilng */
 
