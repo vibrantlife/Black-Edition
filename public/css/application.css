@@ -39,63 +39,33 @@ li {
     background-color: #7A991A;
 }
 
-.index_main_body{
-  margin: auto;
-  position: absolute;
-  top: 150px;
-  left: 10px;
-  padding: 20px;
-  font-family: sans-serif;
+.index_main_title{
+  margin-left: 350px;
+}
+
+.index_main_body {
+    margin: auto;
 }
 
 
-*{
-padding : 0;
-margin : 0;
-border : 0;
-}
-body{
-background-image : url(' bi-background-frame.png ');
-background-attachment : fixed;
-background-size : 100% auto;
-}
-.blended_grid{
-display : block;
-width : 900px;
-overflow : auto;
-margin : 30px auto 0 auto;
-}
-.pageHeader{
-background-color : rgba(0, 0, 0, 0.5);
-float : left;
-clear : none;
-height : 200px;
-width : 900px;
-}
-.pageContent{
-background-color : rgba(0, 0, 0, 0.5);
-float : left;
-clear : none;
-height : 600px;
-width : 700px;
-}
-.pageLeftMenu{
-background-color : rgba(0, 0, 0, 0.5);
-float : left;
-clear : none;
-height : 600px;
-width : 200px;
-}
-.pageFooter{
-background-color : rgba(0, 0, 0, 0.5);
-float : left;
-clear : none;
-height : 100px;
-width : 900px;
+#content {
+    float:left;
+    width:620px;
+    margin-right: 20px;
 }
 
 
+#sidebar {
+    float:right;
+    width:240px;
+    height: 340px;
+    margin-right: 50px;
+}
 
+#container {
+    width:100%;
+    margin:20px auto;
+}
 
 
 

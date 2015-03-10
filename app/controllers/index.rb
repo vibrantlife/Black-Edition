@@ -3,23 +3,40 @@
 # client = Goodreads::Client.new(Goodreads.configuration)
 
 get '/' do
+  if session_logged_in?
+    erb :books
+  else
+    erb :index
+  end
 
+  get '/login' do
+  #go to login page
   erb :index
 end
 
-post '/login' do
 
-  erb :books
+post '/login' do
+  @user = User.where(email: params[:email])
+  session_authenticate params[:email], params[:password]
+  if @user != nil
+    redirect '/'
+  end
+  # erb :books
 end
 
 post '/register' do
-
-  erb :books
+  @new_user = User.create(email: params[:email], password: params[:password])
+  if @new_user
+    session_set_current_user(@new_user)
+    redirect '/books'
+  else
+  erb :index
+end
 end
 
 get '/books' do
 
-erb :books
+  erb :books
 end
 
 
