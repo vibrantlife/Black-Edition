@@ -12,13 +12,13 @@
 <body>
   <div class="index_main_body">
 
-    <form action='/login' method="post">
+    <form action='/login' method="get">
       Email: <input id = "email" type="text" name="email" placeholder="nichole@blacklit.com">
       <br><br>
       Password: <input id = "password" type="password" name="password" placeholder="******">
       <br><br>
       <input type="submit" value="Log in!">
-      <input type="submit" value="Register">
+      <%= erb :_register%>
     </form>
     <br><br><br>
   </div>
