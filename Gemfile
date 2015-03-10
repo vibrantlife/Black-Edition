@@ -15,6 +15,9 @@ gem 'rake'
 
 gem 'shotgun'
 
+## app files
+gem goodreads
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

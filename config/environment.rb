@@ -7,6 +7,7 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 # Require gems we care about
 require 'rubygems'
+require 'dotenv'
 
 require 'uri'
 require 'pathname'
@@ -35,6 +36,7 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+  Dotenv.load
 end
 
 # Set up the controllers and helpers

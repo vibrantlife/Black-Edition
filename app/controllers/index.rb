@@ -1,3 +1,7 @@
+
+# client = Goodreads::Client.new(:api_key => 'KEY', :api_secret => 'SECRET')
+# client = Goodreads::Client.new(Goodreads.configuration)
+
 get '/' do
 
   erb :index
