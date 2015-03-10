@@ -16,7 +16,8 @@ gem 'rake'
 gem 'shotgun'
 
 ## app files
-gem goodreads
+gem 'goodreads'
+gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'

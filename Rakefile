@@ -143,8 +143,8 @@ task :default  => :spec
 task :mytask => :dotenv do
     # things that require .env
   Goodreads.configure(
-    :api_key => 'KEY',
-    :api_secret => 'SECRET'
+    :api_key => ENV['KEY'],
+    :api_secret => ENV['SECRET'],
     )
   end
 
