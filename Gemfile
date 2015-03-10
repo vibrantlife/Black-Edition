@@ -18,6 +18,7 @@ gem 'shotgun'
 ## app files
 gem 'goodreads'
 gem 'dotenv'
+gem 'bcrypt-ruby'
 
 group :test do
   gem 'shoulda-matchers'

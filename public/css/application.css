@@ -1,3 +1,5 @@
+/*index page styling*/
+
 html {
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -39,12 +41,58 @@ li {
     background-color: #7A991A;
 }
 
-.index_main_title{
-  margin-left: 350px;
+.index_main_body {
+    margin-left: 100px;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 25px;
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    margin: -138px 0 0 250px;
+    box-shadow: 0 8px 6px black;
 }
 
-.index_main_body {
-    margin: auto;
+.index_main_body input {
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 1em 0;
+    padding: .5em;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    position: relative;
+}
+
+.index_main_body input.invalid {
+    animation: invalid .5s;
+    -webkit-animation:invalid .5s;
+    box-shadow: 0 0 5px 1px #f43841;
+}
+
+    @keyframes invalid {
+        0%   {left:8px;}
+        10%  {left:-8px;}
+        30%  {left:8px;}
+        60%  {left:-8px;}
+        100% {left:0px;}
+    }
+
+    @-webkit-keyframes invalid {/* Safari and Chrome */
+        0%   {left:8px;}
+        10%  {left:-8px;}
+        30%  {left:8px;}
+        60%  {left:-8px;}
+        100% {left:0px;}
+    }
+
+
+
+/*main page stylilng */
+
+.index_main_title{
+  margin-left: 350px;
 }
 
 

@@ -8,8 +8,9 @@ get '/' do
   else
     erb :index
   end
+end
 
-  get '/login' do
+get '/login' do
   #go to login page
   erb :index
 end
