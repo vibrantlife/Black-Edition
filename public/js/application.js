@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $(function(){
     var $email = $('#email');
-    var $pass = $('password');
+    var $pass = $('#password');
     var $button = $('.index_main_body input[type=submit]');
 
     $button.click(function(){
