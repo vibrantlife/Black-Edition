@@ -8,18 +8,25 @@
 
 </head>
 
-
 <body>
   <div class="index_main_body">
 
-    <form action='/login' method="get">
+    <form action='/login' method="post">
       Email: <input id = "email" type="text" name="email" placeholder="nichole@blacklit.com">
       <br><br>
       Password: <input id = "password" type="password" name="password" placeholder="******">
       <br><br>
-      <input type="submit" value="Log in!">
-      <%= erb :_register%>
+      <input type="submit" name="login" value="Log in!">
+      <input type="submit" name="register" value="Register">
+      <%#= erb :_register%>
     </form>
     <br><br><br>
   </div>
 </body>
+<script>
+
+
+
+
+
+

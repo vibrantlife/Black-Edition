@@ -1,18 +1,16 @@
 <title>Find Books for Your Kids</title>
-<body>
+<div id="session_check">
   <div id="container">
-    <div id="content">
-      <div class="index_main_title">
-        <% if session_current_user%>
-        <h1 ><strong>Welcome, <%= session_current_user.email%></strong></h1>
-        <h6 >Select a Category Below to Choose your Books
-
-          <% end %>
+      <div id="content">
+          <div class="index_main_title">
+            <h1 ><strong>Welcome, <%= session_current_user.email%></strong></h1>
+            <h6 >Select a Category Below to Choose your Books
+              <img src="<%= @picture%>">
+          </div>
       </div>
-    </div>
-
-      <div id="sidebar">
-        sidebar content here
-      </div>
+          <div id="sidebar">
+            <h3>Check Out Reviews for The Book You Selected</h3>
+            <%= @widget %>
+          </div>
   </div>
-</body>
+</div>

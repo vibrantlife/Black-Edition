@@ -19,6 +19,7 @@ gem 'shotgun'
 gem 'goodreads'
 gem 'dotenv'
 gem 'bcrypt-ruby'
+gem 'httparty'
 
 group :test do
   gem 'shoulda-matchers'
