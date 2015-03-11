@@ -38,7 +38,7 @@ before '/s/*' do
 end
 
 get '/s/books' do
-  #display all books
+  #displys two categories of books with buttons.
   @widget = display_book_widget(310258)
   @picture = book_covers(9780140501827)
   erb :books
