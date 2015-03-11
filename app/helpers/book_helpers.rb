@@ -12,6 +12,6 @@ helpers do
   end
 
   def book_covers(isbn)
-    @picture = "http://covers.librarything.com/devkey/e4c3afb256a32d47bfe19383b6061b39/large/isbn/#{isbn}"
+    @picture = "http://covers.librarything.com/devkey/#{ENV['LIBRARY_KEY']}/large/isbn/#{isbn}"
   end
 end
