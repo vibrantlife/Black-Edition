@@ -20,6 +20,8 @@ gem 'goodreads'
 gem 'dotenv'
 gem 'bcrypt-ruby'
 gem 'httparty'
+gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk-resources', '~> 2'
 
 group :test do
   gem 'shoulda-matchers'

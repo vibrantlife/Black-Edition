@@ -1,5 +1,3 @@
-# client = Goodreads::Client.new(:api_key => 'KEY', :api_secret => 'SECRET')
-# client = Goodreads::Client.new(Goodreads.configuration)
 get '/' do
   if session_logged_in?
     erb :books
@@ -39,7 +37,9 @@ end
 
 get '/s/books' do
   #displys two categories of books with buttons.
-  @widget = display_book_widget(310258)
+  @isbn = retrieve_isbn(9780140501827)
+  @title = display_book_title(9780140501827)
+  @widget = display_book_widget(9780140501827)
   @picture = book_covers(9780140501827)
   erb :books
 end

@@ -4,7 +4,9 @@
       <div id="content">
           <div class="index_main_title">
             <h1 ><strong>Welcome, <%= session_current_user.email%></strong></h1>
-            <h6 >Select a Category Below to Choose your Books
+            <h6 >Select a Category Below to Choose your Books</h6>
+              <%= @title %>
+              <%= @isbn %>
               <img src="<%= @picture%>">
           </div>
       </div>
