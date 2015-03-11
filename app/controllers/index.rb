@@ -37,11 +37,13 @@ end
 
 get '/s/books' do
   #displys two categories of books with buttons.
-  @isbn = retrieve_isbn(9780140501827)
-  @title = display_book_title(9780140501827)
-  @widget = display_book_widget(9780140501827)
-  @picture = book_covers(9780140501827)
+
   erb :books
+end
+
+get '/s/books/elementary' do
+  @elementary = Book.where(category_id: 1)
+  erb :elementary
 end
 
 

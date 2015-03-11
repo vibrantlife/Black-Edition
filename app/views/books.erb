@@ -5,14 +5,18 @@
           <div class="index_main_title">
             <h1 ><strong>Welcome, <%= session_current_user.email%></strong></h1>
             <h6 >Select a Category Below to Choose your Books</h6>
-              <%= @title %>
-              <%= @isbn %>
-              <img src="<%= @picture%>">
+
+            <div id="elementary">
+            <button class="btn">Elementary</button>
+            </div>
+            <div id="teens">
+            <button class="btn">Teens</button>
+            </div>
+
           </div>
       </div>
           <div id="sidebar">
-            <h3>Check Out Reviews for The Book You Selected</h3>
-            <%= @widget %>
+            <h6>Check Out Reviews for The Book You Selected</h6>
           </div>
   </div>
 </div>
