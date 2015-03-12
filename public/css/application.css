@@ -11,6 +11,12 @@ html {
   text-align: center;
 }
 
+#background_image {
+  width: 100%;
+  height: 250px;
+  background: url(https://33.media.tumblr.com/a994cea1a388651e6c42091c11f1840a/tumblr_mjk68ofBzm1s7rxklo1_500.gif);
+}
+
 ul {
     list-style-type: none;
     margin: 0;
