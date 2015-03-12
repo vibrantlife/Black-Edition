@@ -1,7 +1,10 @@
 /*index page styling*/
-
+h1 {
+  font-family: 'Rock Salt', cursive;
+  font-size: 46px;
+}
 html {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 .homepage {
