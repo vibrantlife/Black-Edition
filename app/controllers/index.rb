@@ -1,3 +1,6 @@
+require 'json'
+
+
 get '/' do
   if session_logged_in?
     erb :books
@@ -42,8 +45,17 @@ get '/s/books' do
 end
 
 get '/s/books/elementary' do
+  p params
   @elementary = Book.where(category_id: 1)
   erb :elementary
+  @elementary.to_json
+end
+
+get '/s/books/elementary/widget' do
+  content_type :json
+  p params
+  @widget_show = Book.find(params[:id])
+  @widget_show.to_json
 end
 
 

@@ -166,7 +166,7 @@ img {
   height: 350px
 }
 
-#cover_photos {
+.cover_photos {
   margin-top: 60px;
   margin-left: 100px;
 }

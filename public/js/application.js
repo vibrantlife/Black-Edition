@@ -17,4 +17,50 @@ $(document).ready(function() {
       }
     });
   });
+
+  $('body').on('click', 'table', function showWidget(event){
+    event.preventDefault();
+    var id = $(this).attr('id');
+    $.ajax({
+      url: '/s/books/elementary/widget',
+      type: 'GET',
+      dataType: 'json',
+      data: {id: id},
+    })
+    .done(function(data) {
+      console.log("success", data.widget);
+      // $("#"+data.widget+"")
+
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+  });
+
+  $('#elementary').on('click', '.btn', function showBooks(event) {
+    event.preventDefault();
+    console.log(this);
+    $.ajax({
+      url: '/s/books/elementary',
+      type: 'GET',
+      dataType: 'json'
+    })
+    .done(function(data) {
+      console.log("success", data);
+
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+  })
+
+
+
+
 });
