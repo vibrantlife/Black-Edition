@@ -18,39 +18,21 @@ $(document).ready(function() {
     });
   });
 
-  $('body').on('click', 'table', function showWidget(event){
+  $('#elementary').on('click', '.graphite-flat-button', function showElementary(event) {
     event.preventDefault();
-    var id = $(this).attr('id');
-    $.ajax({
-      url: '/s/books/elementary/widget',
-      type: 'GET',
-      dataType: 'json',
-      data: {id: id},
-    })
-    .done(function(data) {
-      console.log("success", data.widget);
-      // $("#"+data.widget+"")
-
-    })
-    .fail(function() {
-      console.log("error");
-    })
-    .always(function() {
-      console.log("complete");
-    });
-  });
-
-  $('#elementary').on('click', '.btn', function showBooks(event) {
-    event.preventDefault();
-    console.log(this);
+    var elemIdentifier = $(this).attr('p');
     $.ajax({
       url: '/s/books/elementary',
       type: 'GET',
-      dataType: 'json'
+      dataType: 'json',
+      data: {id: elemIdentifier}
     })
     .done(function(data) {
       console.log("success", data);
-
+      $("#book_container").empty();
+      for (var i = 0; i < data.length; ++i) {
+        $('#book_container').append("<img src='" +  data[i].img_url + " 'id = '"+ data[i].id +"'>" );
+      }
     })
     .fail(function() {
       console.log("error");
@@ -60,7 +42,55 @@ $(document).ready(function() {
     });
   })
 
+  $('#teens').on('click', '.graphite-flat-button', function showTeens(event){
+    event.preventDefault();
+    var teenIdentifier = $(this).attr('p');
+    $.ajax({
+      url: '/s/books/teens',
+      type: 'GET',
+      dataType: 'json',
+      data: {id: teenIdentifier},
+    })
+    .done(function(data) {
+      console.log("success");
+      $("#book_container").empty();
+      for (var i=0; i < data.length; ++i) {
+        $("#book_container").append("<img src='" + data[i].img_url + " 'id = '"+ data[i].id + "' class='img_widget'>" );
+      }
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+
+    $('#book_container').on('click', 'img', function teenWidget(event){
+      event.preventDefault();
+      var widgetFinder = $(this).attr('id')
+      console.log(widgetFinder);
+      $.ajax({
+        url: '/s/books/widget',
+        type: 'GET',
+        dataType: 'JSON',
+        data: {id: widgetFinder},
+      })
+      .done(function(data) {
+        console.log("success", data.widget);
+        $("#widget").append(data.widget)
+      })
+      .fail(function() {
+        console.log("error");
+      })
+      .always(function() {
+        console.log("complete");
+      });
+
+    })
+
+  })
 
 
 
+// documentready close
 });

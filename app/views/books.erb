@@ -1,26 +1,22 @@
 <title>Find Books for Your Kids</title>
 <ul class="navbar">
-    <li><a  href="/logout">LogOut </a></li>
-  </ul>
-
+  <li><a  href="/logout">LogOut </a></li>
+</ul>
+<h2 ><strong>Welcome, <%= session_current_user.email%></strong></h2>
+      <h6 >Select a Category Below to Choose your Books</h6>
 <div id="session_check">
-  <div id="container">
-      <div id="content">
-          <div class="index_main_title">
-            <h2 ><strong>Welcome, <%= session_current_user.email%></strong></h2>
-            <h6 >Select a Category Below to Choose your Books</h6>
-
-            <div id="elementary">
-            <button class="btn">Elementary</button>
-            </div>
-            <div id="teens">
-            <button class="btn">Teens</button>
-            </div>
-
-          </div>
+  <div id="content">
+    <div class="index_main_title">
+      <div id="categories">
+        <div id="elementary">
+          <p><input type="submit" value="Elementary" class="graphite-flat-button"></p>
+        </div>
+        <div id="teens">
+          <p><input type="submit" value="Teens" class="graphite-flat-button"></p>
+        </div>
       </div>
-          <div id="sidebar">
-            <h6>Check Out Reviews for The Book You Selected</h6>
-          </div>
+    </div>
   </div>
 </div>
+<div id="book_container"></div>
+<div id="widget"></div>

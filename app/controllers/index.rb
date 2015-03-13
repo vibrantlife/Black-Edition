@@ -40,7 +40,6 @@ end
 
 get '/s/books' do
   #displys two categories of books with buttons.
-
   erb :books
 end
 
@@ -51,11 +50,16 @@ get '/s/books/elementary' do
   @elementary.to_json
 end
 
-get '/s/books/elementary/widget' do
+get '/s/books/widget' do
   content_type :json
   p params
   @widget_show = Book.find(params[:id])
   @widget_show.to_json
+end
+
+get '/s/books/teens' do
+  @teens = Book.where(category_id: 2)
+  @teens.to_json
 end
 
 
