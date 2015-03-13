@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  //registration styling
   $(function(){
     var $email = $('#email');
     var $pass = $('#password');
@@ -17,7 +18,7 @@ $(document).ready(function() {
       }
     });
   });
-
+  // display book covers for elementary
   $('#elementary').on('click', '.graphite-flat-button', function showElementary(event) {
     event.preventDefault();
     var elemIdentifier = $(this).attr('p');
@@ -31,7 +32,7 @@ $(document).ready(function() {
       console.log("success", data);
       $("#book_container").empty();
       for (var i = 0; i < data.length; ++i) {
-        $('#book_container').append("<img src='" +  data[i].img_url + " 'id = '"+ data[i].id +"'>" );
+        $("#book_container").append("<img src='" + data[i].img_url + " 'id = '"+ data[i].id + "' class='img_widget'>" );
       }
     })
     .fail(function() {
@@ -42,6 +43,7 @@ $(document).ready(function() {
     });
   })
 
+  //display book covers for teens
   $('#teens').on('click', '.graphite-flat-button', function showTeens(event){
     event.preventDefault();
     var teenIdentifier = $(this).attr('p');
@@ -63,31 +65,31 @@ $(document).ready(function() {
     })
     .always(function() {
       console.log("complete");
-    });
-
-    $('#book_container').on('click', 'img', function teenWidget(event){
-      event.preventDefault();
-      var widgetFinder = $(this).attr('id')
-      console.log(widgetFinder);
-      $.ajax({
-        url: '/s/books/widget',
-        type: 'GET',
-        dataType: 'JSON',
-        data: {id: widgetFinder},
-      })
-      .done(function(data) {
-        console.log("success", data.widget);
-        $("#widget").append(data.widget)
-      })
-      .fail(function() {
-        console.log("error");
-      })
-      .always(function() {
-        console.log("complete");
-      });
-
     })
+  });
 
+  //display widget for all books
+  $('#book_container').on('click', 'img', function showWidget(event){
+    event.preventDefault();
+    var widgetFinder = $(this).attr('id')
+    console.log(widgetFinder);
+    $.ajax({
+      url: '/s/books/widget',
+      type: 'GET',
+      dataType: 'JSON',
+      data: {id: widgetFinder},
+    })
+    .done(function(data) {
+      console.log("success");
+      $("#widget").empty();
+      $("#widget").append(data.widget)
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
   })
 
 
