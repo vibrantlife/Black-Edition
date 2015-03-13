@@ -1,23 +1,23 @@
 <title>Find Books for Your Kids</title>
-<ul class="navbar">
-  <li><a  href="/logout">LogOut </a></li>
-</ul>
-<h2 ><strong>Welcome, <%= session_current_user.email%></strong></h2>
-<h6 >Select a Category Below to Choose your Books</h6>
+<h2>Welcome, <%= session_current_user.email%></h2>
 <div id="session_check"></div>
-<div class="categories">
-  <div id="elementary">
-    <input type="submit" value="Elementary" class="graphite-flat-button">
-  </div>
-  <div id="teens">
-    <input type="submit" value="Teens" class="graphite-flat-button">
-  </div>
-  <div id="popular">
-    <input type="submit" value="Popular" class="graphite-flat-button">
-  </div>
-  <div id="detective">
-    <input type="submit" value="Detectives" class="graphite-flat-button"></p>
-  </div>
-</div>
 <div id="book_container"></div>
 <div id="widget"></div>
+
+<h6 >Select a Category Below to Choose your Books</h6>
+<!-- Sidebar -->
+<div id="wrapper" class="active">
+  <div id="sidebar-wrapper">
+    <ul id="sidebar_menu" class="sidebar-nav">
+     <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+   </ul>
+   <ul class="sidebar-nav" id="sidebar">
+    <li><a id="elementary">Elementary<span></span></a></li>
+    <li><a id="teens">Teens<span></span></a></li>
+    <li><a id="popular">Popular<span></span></a></li>
+    <li><a id="detective">Detectives<span></span></a></li>
+    <li><a href="/logout">Logout</a></li>
+  </ul>
+</div>
+</div>
+

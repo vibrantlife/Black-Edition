@@ -27,9 +27,9 @@ $(document).ready(function() {
   });
 
   // display book covers for elementary
-  $('#elementary').on('click', '.graphite-flat-button', function showElementary(event) {
+  $('#sidebar').on('click', '#elementary', function showElementary(event) {
     event.preventDefault();
-    var elemIdentifier = $(this).attr('p');
+    var elemIdentifier = $(this).attr('span');
     $.ajax({
       url: '/s/books/elementary',
       type: 'GET',
@@ -52,7 +52,7 @@ $(document).ready(function() {
   })
 
   //display book covers for teens
-  $('#teens').on('click', '.graphite-flat-button', function showTeens(event){
+  $('#sidebar').on('click', '#teens', function showTeens(event){
     event.preventDefault();
     var teenIdentifier = $(this).attr('p');
     $.ajax({
@@ -77,7 +77,7 @@ $(document).ready(function() {
   });
 
   //popular
-  $('#popular').on('click', '.graphite-flat-button', function showPop(event){
+  $('#sidebar').on('click', '#popular', function showPop(event){
     event.preventDefault();
     var popIdentifier = $(this).attr('p');
     $.ajax({
@@ -102,7 +102,7 @@ $(document).ready(function() {
   });
 
     //detective display
-    $('#detective').on('click', '.graphite-flat-button', function showDet(event){
+    $('#sidebar').on('click', '#detective', function showDet(event){
     event.preventDefault();
     var detIdentifier = $(this).attr('p');
     $.ajax({
