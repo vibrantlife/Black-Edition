@@ -18,6 +18,14 @@ $(document).ready(function() {
       }
     });
   });
+
+  //registration slidetoggle
+  $("#registration").hide(function(){
+    $(".index_register button").on('click', function(){
+      $('#registration').slideToggle('slow');
+    })
+  });
+
   // display book covers for elementary
   $('#elementary').on('click', '.graphite-flat-button', function showElementary(event) {
     event.preventDefault();

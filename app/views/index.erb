@@ -1,7 +1,7 @@
 <title> Welcome to Black Edition </title>
  <h1> Black Edition </h1>
  <div id="background_image"></div>
-<body>
+
   <div class="index_main_body">
     <form action='/login' method="post">
       Email: <input id = "email" type="text" name="email" placeholder="nichole@blacklit.com">
@@ -9,12 +9,23 @@
       Password: <input id = "password" type="password" name="password" placeholder="******">
       <br>
       <input type="submit" name="login" value="Log in!">
-      <%#= erb :_register%>
     </form>
     <br><br><br>
   </div>
-</body>
-<script>
+
+  <div class="index_register">
+    <button><h2>Register Now</h2></button>
+  <form action='/register' method="post" id="registration">
+      Email: <input id = "email" type="text" name="email" placeholder="nichole@blacklit.com">
+      <br>
+      Password: <input id = "password" type="password" name="password" placeholder="******">
+      <br>
+      <input type="submit" name="register" value="Register" >
+  </form>
+</div>
+
+
+
 
 
 
