@@ -30,7 +30,7 @@ li {
 }
 
 .navbar {
-  background-color: #690E73;
+  background-color: gray;
   width: 100%;
   height: 30px;
 }
@@ -41,7 +41,7 @@ li {
   width: 120px;
   font-weight: bold;
   color: #FFFFFF;
-  background-color: #690E73;
+  background-color: gray;
   text-align: center;
   padding: 4px;
   text-decoration: none;
@@ -143,9 +143,10 @@ li {
 /*main page stylilng */
 
 #session_check {
+  /*https://img1.etsystatic.com/000/0/5850961/il_570xN.248748755.jpg*/
   height: 400px;
   width: 100%;
-  background: url(http://www.desktopaper.com/wp-content/uploads/unusual-flowers-books-hd-wallpapers.jpg);
+  background: url(http://therumpus.net/wp-content/uploads/2013/06/art-black-and-white-books-pretty-favim_com-4251782.jpg);
   background-repeat: repeat-x;
 }
 
