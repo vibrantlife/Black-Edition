@@ -3,6 +3,7 @@ h1 {
   font-family: 'Rock Salt', cursive;
   font-size: 46px;
 }
+
 html {
   font-family: 'Noto Sans', sans-serif;
 }
@@ -122,34 +123,7 @@ li {
 }
 
 
-#content {
-  float:left;
-  width:620px;
-  margin-right: 20px;
-}
-
-
-#sidebar {
-  float:right;
-  width:240px;
-  height: 340px;
-  margin-right: 350px;
-}
-
 #session_check {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  flex-flow: row wrap;
-  justify-content: space-around;
   height: 400px;
   width: 100%;
   background: url(http://www.desktopaper.com/wp-content/uploads/unusual-flowers-books-hd-wallpapers.jpg);
@@ -159,11 +133,9 @@ li {
 
 /*category buttons*/
 .graphite-flat-button {
-  position: relative;
-  vertical-align: top;
   width: 100%;
   height: 60px;
-  padding: 5px;
+  padding: 15px;
   font-size: 22px;
   color:white;
   text-align: center;
@@ -174,6 +146,7 @@ li {
   -webkit-box-shadow: inset 0 -2px #2f2e2e;
   box-shadow: inset 0 -2px #2f2e2e;
 }
+
 .graphite-flat-button:active {
   top: 1px;
   outline: none;
@@ -187,7 +160,6 @@ li {
   margin-bottom: 20px;
   display: block;
   margin-left: 120px
-
 }
 
 #book_container {
@@ -200,7 +172,7 @@ li {
   height: 500px;
 }
 
-/*img */
+/*img*/
 img {
   width: 300px;
   height: 350px
@@ -209,11 +181,6 @@ img {
 .cover_photos {
   margin-top: 60px;
   margin-left: 100px;
-}
-
-#categories {
-  display: flex;
-  flex-direction: row;
 }
 
 

@@ -68,6 +68,56 @@ $(document).ready(function() {
     })
   });
 
+  //popular
+  $('#popular').on('click', '.graphite-flat-button', function showPop(event){
+    event.preventDefault();
+    var popIdentifier = $(this).attr('p');
+    $.ajax({
+      url: '/s/books/popular',
+      type: 'GET',
+      dataType: 'json',
+      data: {id: popIdentifier},
+    })
+    .done(function(data) {
+      console.log("success");
+      $("#book_container").empty();
+      for (var i=0; i < data.length; ++i) {
+        $("#book_container").append("<img src='" + data[i].img_url + " 'id = '"+ data[i].id + "' class='img_widget'>" );
+      }
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    })
+  });
+
+    //detective display
+    $('#detective').on('click', '.graphite-flat-button', function showDet(event){
+    event.preventDefault();
+    var detIdentifier = $(this).attr('p');
+    $.ajax({
+      url: '/s/books/detective',
+      type: 'GET',
+      dataType: 'json',
+      data: {id: detIdentifier},
+    })
+    .done(function(data) {
+      console.log("success");
+      $("#book_container").empty();
+      for (var i=0; i < data.length; ++i) {
+        $("#book_container").append("<img src='" + data[i].img_url + " 'id = '"+ data[i].id + "' class='img_widget'>" );
+      }
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    })
+  });
+
   //display widget for all books
   $('#book_container').on('click', 'img', function showWidget(event){
     event.preventDefault();

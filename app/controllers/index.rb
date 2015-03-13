@@ -50,6 +50,21 @@ get '/s/books/elementary' do
   @elementary.to_json
 end
 
+get '/s/books/teens' do
+  @teens = Book.where(category_id: 2)
+  @teens.to_json
+end
+
+get '/s/books/popular' do
+  @popular = Book.where(category_id: 3)
+  @popular.to_json
+end
+
+get '/s/books/detective' do
+  @detective = Book.where(category_id: 4)
+  @detective.to_json
+end
+
 get '/s/books/widget' do
   content_type :json
   p params
@@ -57,10 +72,6 @@ get '/s/books/widget' do
   @widget_show.to_json
 end
 
-get '/s/books/teens' do
-  @teens = Book.where(category_id: 2)
-  @teens.to_json
-end
 
 
 get '/logout' do
