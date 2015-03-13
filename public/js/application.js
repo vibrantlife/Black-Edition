@@ -20,11 +20,20 @@ $(document).ready(function() {
   });
 
   //registration slidetoggle
-  $("#registration").hide(function(){
+  $(".reg").hide(function(){
     $(".index_register button").on('click', function(){
-      $('#registration').slideToggle('slow');
+      $('.reg').slideToggle('slow');
     })
   });
+
+
+  //login slideToggle
+  $("#login").hide(function(){
+    $(".index_main_body button").on('click', function(){
+      $("#login").slideToggle('slow')
+    })
+  });
+
 
   // display book covers for elementary
   $('#sidebar').on('click', '#elementary', function showElementary(event) {
