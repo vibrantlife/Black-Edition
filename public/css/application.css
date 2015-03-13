@@ -36,16 +36,8 @@ li {
 }
 
 
-
-/*
-#login{
-  display: none;
-}*/
-
-
-
 .login {
-  float: left;
+  /*float: left;*/
   margin-left: 100px;
   border: 1px solid black;
   border-radius: 25px;
@@ -90,7 +82,7 @@ li {
   100% {left:0px;}
 }
 .login input[type=submit]{
-  float:right;
+  /*float:right;*/
   margin:1em 0;
   padding:.5em 1em;
   border:0;
@@ -143,28 +135,6 @@ li {
 }
 
 
-/*category buttons*/
-.graphite-flat-button {
-  display: inline;
-  width: 20%;
-  height: 60px;
-  padding: 15px;
-  font-size: 22px;
-  color: white;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  background-color: #27576B;
-  cursor: pointer;
-  -webkit-box-shadow: inset 0 -2px #2f2e2e;
-  box-shadow: inset 0 -2px #2f2e2e;
-}
-
-.graphite-flat-button:active {
-  top: 1px;
-  outline: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
 
 
 
