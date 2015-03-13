@@ -3,23 +3,20 @@
   <li><a  href="/logout">LogOut </a></li>
 </ul>
 <h2 ><strong>Welcome, <%= session_current_user.email%></strong></h2>
-      <h6 >Select a Category Below to Choose your Books</h6>
-<div id="session_check">
-      <div class="categories">
-        <div id="elementary">
-          <input type="submit" value="Elementary" class="graphite-flat-button">
-        </div>
-        <div id="teens">
-          <input type="submit" value="Teens" class="graphite-flat-button">
-        </div>
-        <div id="popular">
-          <input type="submit" value="Popular" class="graphite-flat-button">
-        </div>
-        <div id="detective">
-          <input type="submit" value="Detectives" class="graphite-flat-button"></p>
-        </div>
-      </div>
-    </div>
+<h6 >Select a Category Below to Choose your Books</h6>
+<div id="session_check"></div>
+<div class="categories">
+  <div id="elementary">
+    <input type="submit" value="Elementary" class="graphite-flat-button">
+  </div>
+  <div id="teens">
+    <input type="submit" value="Teens" class="graphite-flat-button">
+  </div>
+  <div id="popular">
+    <input type="submit" value="Popular" class="graphite-flat-button">
+  </div>
+  <div id="detective">
+    <input type="submit" value="Detectives" class="graphite-flat-button"></p>
   </div>
 </div>
 <div id="book_container"></div>
