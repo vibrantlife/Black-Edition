@@ -61,7 +61,7 @@ li {
   height: 300px;
   width: 450px;
   position: absolute;
-  margin: 18px 0 0 650px;
+  margin: 18px 50px;
   box-shadow: 0 8px 6px #ccc;
 }
 
@@ -116,8 +116,8 @@ li {
   top: 2px;
 }
 
-.index_register {
-  float: left;
+#registration {
+  float: right;
   margin-left: 100px;
   border: 1px solid black;
   border-radius: 25px;
@@ -129,7 +129,7 @@ li {
   box-shadow: 0 8px 6px #ccc;
 }
 
-.index_register input {
+#registration input {
   display: block;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
