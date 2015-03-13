@@ -53,14 +53,15 @@ li {
 }
 
 .index_main_body {
+  float: left;
   margin-left: 100px;
   border: 1px solid black;
   border-radius: 25px;
-  padding: 25px;
-  height: 450px;
+  padding: 20px;
+  height: 300px;
   width: 450px;
   position: absolute;
-  margin: 108px 0 0 650px;
+  margin: 18px 0 0 650px;
   box-shadow: 0 8px 6px #ccc;
 }
 
@@ -118,11 +119,6 @@ li {
 
 /*main page stylilng */
 
-.index_main_title{
-  margin-left: 350px;
-}
-
-
 #session_check {
   height: 400px;
   width: 100%;
@@ -133,7 +129,8 @@ li {
 
 /*category buttons*/
 .graphite-flat-button {
-  width: 100%;
+  display: inline;
+  width: 20%;
   height: 60px;
   padding: 15px;
   font-size: 22px;
@@ -141,7 +138,6 @@ li {
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
   background: #9A2EFE;
-  border: blue 2px solid;
   cursor: pointer;
   -webkit-box-shadow: inset 0 -2px #2f2e2e;
   box-shadow: inset 0 -2px #2f2e2e;
